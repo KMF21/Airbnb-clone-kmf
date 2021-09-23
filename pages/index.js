@@ -50,7 +50,7 @@ export default function Home({ exploreData, cardData }) {
           buttonText="Get inspired"
         />
       </main>
-      <Footer />
+      <Footer  />
     </div>
   );
 }
