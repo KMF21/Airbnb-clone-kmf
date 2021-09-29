@@ -44,7 +44,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="flex sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10">
+    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10">
       {/* letf */}
       <div
         onClick={() => router.push("/")}

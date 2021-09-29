@@ -3,10 +3,11 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/dist/client/router";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ searchResult }) {
   const router = useRouter();
-  console.log(searchResult);
+ 
 
   const { location, startDate, endDate, numberOfGuests } = router.query;
 
@@ -38,21 +39,24 @@ function Search({ searchResult }) {
             <p className="button ">More filters</p>
           </div>
           <div className="flex flex-col">
-          {searchResult.map((item) => (
-            <InfoCard
-              key={item.img}
-              img={item.img}
-              location={item.location}
-              title={item.title}
-              description={item.description}
-              star={item.star}
-              price={item.price}
-              total={item.total}
-              long={item.long}
-              lat={item.lat}
-            />
-          ))}</div>
-
+            {searchResult.map((item) => (
+              <InfoCard
+                key={item.img}
+                img={item.img}
+                location={item.location}
+                title={item.title}
+                description={item.description}
+                star={item.star}
+                price={item.price}
+                total={item.total}
+                long={item.long}
+                lat={item.lat}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="hidden lg:inline-flex lg:min-w-[600px]">
+          <Map searchResult ={searchResult}/>
         </section>
       </main>
 
